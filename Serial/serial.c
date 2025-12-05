@@ -86,6 +86,14 @@ int main(int argc, char **argv) {
     double end = clock();
     printf("Serial time: %.4f s\n", (end - start) / CLOCKS_PER_SEC);
 
+    //print final positions and velocities of first 5 bodies for demonstration
+    for (int i = 0; i < 5 && i < N; i++) {
+        printf("Body %d: pos = (%.2f, %.2f, %.2f), vel = (%.2f, %.2f, %.2f)\n",
+            i,
+            bodies[i].pos[0], bodies[i].pos[1], bodies[i].pos[2],
+            bodies[i].vel[0], bodies[i].vel[1], bodies[i].vel[2]);
+    }
+
     free(bodies);
     free(acc);
     return 0;
